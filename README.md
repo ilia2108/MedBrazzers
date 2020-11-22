@@ -1,6 +1,7 @@
 # eLEKsir project
 
-Hello. This is a repository of team MedBrazzers that has created a project eLEKsir - a brand new way of coopeeration between HPC, pharmacists and patients. It uses WR codes to access medeical data which is sotred in blockchain based on Ethereum. In the following chapters we'll describe all components of our solution. Here's a full demo of our product (click on the picture):
+Hello. This is a repository of team MedBrazzers that has created a project eLEKsir - a brand new way of coopeeration between HPC, pharmacists and patients. It uses WR codes to access medeical data which is sotred in blockchain based on Ethereum. In the following chapters we'll describe all components of our solution. Here's a demo (click on the picture)
+
 [![Full demo](https://img.youtube.com/vi/6VadtWG0G4M/0.jpg)](https://youtu.be/6VadtWG0G4M "Full demo")
 
 ## Frontend
