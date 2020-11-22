@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="nav nav-tabs ml-auto">
+        <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link active js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item nav-link js-scroll-trigger"></li>
+        <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="#contact">contact</a></li>
+    </ul>
+</div>
+<!-- Start: Features Boxed -->
+<div class="d-xl-flex align-items-xl-end features-boxed" style="margin-top: 99px;background: rgba(238,244,247,0);">
+    <div class="container d-xl-flex align-items-xl-center">
+        <!-- Start: Features -->
+        <div class="row d-xl-flex justify-content-center align-items-xl-center features" style="margin-bottom: 40px;">
+          <div class="col-sm-6 col-md-5 col-lg-4 item"><div class="box"><i class="fa fa-qrcode icon" style="-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;"></i>
+            <h3 class="name" style="color: rgb(49,52,55);">Get your QR-Code</h3>
+            <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu.</p>
+            <button id="getQR">Get QR</button>
+            <button id='printButton'>Print</button>
+
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-5 col-lg-4 item" style='visibility:hidden;' id='qrWrap'>
+          <div class="box">
+            <div id='qrcode'>
+            </div>
+
+          </div>
+        </div>
+
+        </div>
+        <!-- End: Features -->
+    </div>
+</div>
+<!-- End: Features Boxed -->
+<!-- Start: Team Clean -->
+<div class="team-clean">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">Your Health Records</h2>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: People -->
+        <div class="row people">
+            <div class="col-md-6 col-lg-4 col-xl-3 item">
+                <h3 class="name">Body Measurements</h3>
+                <p class="title">height</p>
+                <p class="description" style='font-size: 1.5em;'>172cm</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 item">
+              <h3 class="name">Body Measurements</h3>
+              <p class="title">weight</p>
+              <p class="description" style='font-size: 1.5em;'>80kg</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 item">
+              <h3 class="name">Allergens</h3>
+              <p class="title">List</p>
+              <p class="description">* Milk<br>* Eggs<br>* Soy</p>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-3 item">
+                <h3 class="name"><strong>Health Issues</strong><br></h3>
+                <p class="title"><strong>List</strong><br></p>
+                <p class="description">* Asthma<br>* Diabetes</p>
+            </div>
+        </div>
+        <!-- End: People -->
+    </div>
+</div>
+<!-- End: Team Clean -->
+<!-- Start: Competences Grid - 3 Columns - Hover Effect Pop -  -->
+<div style="text-align: center;">
+    <div class="container-fluid"></div>
+</div>
+<!-- End: Competences Grid - 3 Columns - Hover Effect Pop -  -->
+<!-- Start: 1 Row 1 Column -->
+<div>
+    <div class="container">
+        <div class="row"><div class="col-md-12"><a id="qr"></a></div>
+            <div class="col-md-12"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- End: Sidebar -->
+<!-- Start: 1 Row 3 Columns -->
+
+    <!-- End: table -->
+<!-- End: 1 Row 3 Columns -->
+
+
+<script type="text/javascript">
+$("#getQR").click(function(){
+  var url = 'http://localhost:5000/qr'; // pass data like this ?data='+text
+        // AJAX START
+        $.getJSON(url, function(data) {
+    // JSON result in `data` variable
+        var qrJSON = JSON.stringify(data);
+
+        new QRCode(document.getElementById("qrcode"), qrJSON);
+
+    });
+
+    $('#qrWrap').css('visibility','visible');
+});
+
+$("#printButton").click(function(){
+  var image = $('#qrcode img').attr('src');
+  if (image){
+    printImg(image);
+  } else {
+    alert('Generate your QR first!');
+  }
+
+}
+
+
+);
+</script>
+
+
+
+
+{% endblock %}

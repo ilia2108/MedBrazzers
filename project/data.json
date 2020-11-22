@@ -1,0 +1,132 @@
+{ "abi" : [
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "uid",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "surname",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "birthdate",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "drugs",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "allergenes",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "healthproblems",
+        "type": "string"
+      }
+    ],
+    "name": "createpatient",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "patientCount",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "patients",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "uid",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "surname",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "birthdate",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "drugs",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "allergenes",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "healthproblems",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registryName",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+],
+"contract_address" : "0x85eA6f018ec5B2Db0663706c4D3FB35Fd8517b52"
+}

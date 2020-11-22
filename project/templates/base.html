@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Eleksir</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome5-overrides.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body id="page-top" style="background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #14008c);background-size: 400% 400%;-webkit-animation: Gradient 15s ease infinite;-moz-animation: Gradient 15s ease infinite;animation: Gradient 15s ease infinite;">
+  <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="background: rgba(0,0,0,0);">
+    <div class="container-fluid"><a class="navbar-brand js-scroll-trigger" href="#">MedBrazzers | Eleksir</a><button data-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+      value="Menu"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link active js-scroll-trigger" href="{{ url_for('main.index') }}" style="border-style: none;">About</a></li>
+          {% if not current_user.is_authenticated %}
+          <li class="nav-item d-block nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="{{ url_for('auth.login') }}">Login</a></li>
+          <li class="nav-item d-block nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="{{ url_for('auth.signup') }}">Sign Up</a></li>
+          {% else %}
+          <li class="nav-item d-block nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="{{ url_for('main.profile') }}">Profile</a></li>
+          <li class="nav-item d-block nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="{{ url_for('auth.logout') }}">Log Out</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% block content %}
+  {% endblock content %}
+
+  <footer class="text-uppercase" style="font-family: 'Source Code Pro', monospace;">
+    <div class="container text-center">
+      <p>Copyright ©&nbsp;MedBrazzers 2020</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/qrcode.min.js') }}"></script>
+</body>
+
+</html>

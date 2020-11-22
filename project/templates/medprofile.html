@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="nav nav-tabs ml-auto">
+        <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link active js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item nav-link js-scroll-trigger"></li>
+        <li class="nav-item nav-link js-scroll-trigger"><a class="nav-link js-scroll-trigger" href="#contact">contact</a></li>
+    </ul>
+</div>
+<!-- Start: Features Boxed -->
+<div class="d-xl-flex align-items-xl-end features-boxed" style="margin-top: 99px;background: rgba(238,244,247,0);">
+    <!-- Start: Success Alert Pop-up Button -->
+    <div class="container d-xl-flex w-100">
+        <!-- Start: Features -->
+        <div class="row d-xl-flex justify-content-center  align-items-xl-center features" style="margin-bottom: 40px;">
+          <div class="col item">
+            <div class="box">
+            <h3 class="name" style="color: rgb(49,52,55);">Add a Patient</h3>
+            <form method="post" action="/addPatient">
+
+                <div class="form-group"><input class="form-control" type="text" name="uid" placeholder="UID" style="border-radius: 4px;" required=""></div>
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="First Name" style="border-radius: 4px;" required=""></div>
+                <div class="form-group"><input class="form-control" type="text" name="surname" placeholder="Last Name" style="border-radius: 4px;" required=""></div>
+                <div class="form-group"><input class="form-control" type="text" name="birthdate" placeholder="Birthday" style="border-radius: 4px;" required=""></div>
+                <div class="form-group"><input class="form-control" type="text" name="drugs" placeholder="Prescribed drugs" style="border-radius: 4px;"></div>
+                <div class="form-group"><input class="form-control" type="text" name="allergenes" placeholder="Allergenes" style="border-radius: 4px;"></div>
+                <div class="form-group"><input class="form-control" type="text" name="healthproblems" placeholder="Health Problems" style="border-radius: 4px;" ></div>
+
+                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="box-shadow: 3px 3px 4px rgba(0,0,0,0.2);background: rgba(124,135,149,0);border-width: 0.5px;border-style: solid;">Add</button></div>
+            </form>
+
+          </div>
+        </div>
+
+
+        </div>
+        <!-- End: Features -->
+    </div>
+
+</div>
+<!-- End: Features Boxed -->
+<div class="team-clean">
+    <div class="container">
+        <!-- Start: Intro -->
+        <div class="intro">
+            <h2 class="text-center">Recommended drugs</h2>
+        </div>
+        <!-- End: Intro -->
+        <!-- Start: People -->
+        <div class="row people">
+            <div class="col item">
+                <h3 class="name">COVID-19</h3>
+                <p class="description" style='font-size: 1.5em;'>* Lopinavir<br>* Ritonavir</p>
+            </div>
+            <div class="col item">
+              <h3 class="name">Diabetes</h3>
+              <p class="description" style='font-size: 1.5em;'>* Insulin<br>* Glimepiride<br>* Metformin</p>
+            </div>
+
+        </div>
+        <!-- End: People -->
+    </div>
+</div>
+
+
+{% endblock %}
